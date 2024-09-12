@@ -24,8 +24,8 @@ steps:
         --runtime python39 \
         --trigger-http \
         --allow-unauthenticated \
-        --region europe-west-2 \
-        --entry-point fetch_and_store_data
+        --region europe-west2 \
+        --entry-point fetch_and_store_data \
         --source ./source/cloud_function/
 
 timeout: '1200s'
