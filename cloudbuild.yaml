@@ -5,7 +5,7 @@ steps:
 
 # Step 1: upload dags
 - name: 'gcr.io/cloud-builders/gsutil'
-  args: ['cp', '-r', '.', 'gs://europe-west2-football-data--c5cbc078-bucket/dags/']
+  args: ['cp', '-r', 'example_dag.py', 'gs://europe-west2-football-data--c5cbc078-bucket/dags/']
   id: 'upload-dags'
 
 ## Step 2: Deploy the Cloud Function
