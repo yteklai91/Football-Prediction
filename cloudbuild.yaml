@@ -1,0 +1,28 @@
+steps:
+# Step 1: Set up the environment
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'bash'
+  args:
+    - '-c'
+    - |
+      gcloud config set project Football Predictons
+
+# Step 2: upload dags
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ['cp', '-r', '.', 'gs://europe-west2-football-data--c5cbc078-bucket/dags/']
+  id: 'upload-dags'
+
+## Step 3: Deploy the Cloud Function
+#- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+#  entrypoint: 'bash'
+#  args:
+#    - '-c'
+#    - |
+#      gcloud functions deploy fetch_and_store_data \
+#        --runtime python39 \
+#        --trigger-http \
+#        --allow-unauthenticated \
+#        --region europe-west-2 \
+#        --entry-point fetch_and_store_data
+
+timeout: '1200s'
