@@ -1,3 +1,6 @@
+options:
+  logging: CLOUD_LOGGING_ONLY
+
 steps:
 # Step 1: Set up the environment
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
