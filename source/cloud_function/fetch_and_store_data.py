@@ -2,10 +2,11 @@ import requests
 from google.cloud import storage
 import os
 
-def fetch_and_store_data(request):
+
+def fetch_and_store_data():
     # Configuration
     api_url = 'https://example.com/api/data'
-    bucket_name = 'your-bucket-name'
+    bucket_name = 'gs://source_code_yteklai91/'
     blob_name = 'data-file.json'
 
     # Fetch data from API
